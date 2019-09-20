@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {JournalEntriesService} from '../services/journal-entries.service'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+
+  entries: Array<Object>;
+
+  constructor( private journalEntriesService: JournalEntriesService){
+  }
+
+  ngOnInit() {
+
+    this.journalEntriesService.getJournalEntries().subscribe(entries =>this.entries=entries)
+  }
+
+
+  getList = () => {console.log(this.entries) }
 }
