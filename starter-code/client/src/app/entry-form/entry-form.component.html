@@ -1,0 +1,17 @@
+<button (click)="toggleForm()">Add Entry!</button>
+
+<div *ngIf="isForm"> 
+
+    <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+
+        <label for="title">Title</label>
+        <input type="text" name="title" [(ngModel)]="title">
+      
+        <label for="content">Content</label>
+        <input type="text" name="content" [(ngModel)]="content">
+      
+        <button>Submit!</button>
+      
+      </form>
+
+</div>

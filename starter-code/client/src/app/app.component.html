@@ -1,13 +1,4 @@
-<h1 (click)="getList()">
-  GETLIST
-  </h1>
-  <div class=“contenedor”>
-    <ul *ngFor="let journal of entries">
-      <li>{{journal.title}}</li>
-      <li>{{journal.date}}</li>
-      <a [routerLink]="['/journal', journal._id]"> View Details </a>
-    </ul>
-   </div> 
+
 
    <router-outlet></router-outlet>
    

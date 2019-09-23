@@ -5,13 +5,21 @@ import { HttpModule } from '@angular/http';
 import {JournalEntriesService} from '../services/journal-entries.service'
 import { RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
+import { SingleEntryComponent } from './single-entry/single-entry.component';
+import { EntryListComponent } from './entry-list/entry-list.component';
+import { EntryFormComponent } from './entry-form/entry-form.component';
 
-
-const routes = []
+const routes = [
+  { path:'', component: EntryListComponent},
+  { path: ':id', component: SingleEntryComponent}
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SingleEntryComponent,
+    EntryListComponent,
+    EntryFormComponent
   ],
   imports: [
     BrowserModule,

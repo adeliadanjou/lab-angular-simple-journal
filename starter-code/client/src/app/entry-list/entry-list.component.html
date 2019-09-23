@@ -1,0 +1,15 @@
+<entry-form (onPosted)="refreshList()"></entry-form>
+
+<h1>
+LIST OF ENTRIES
+    </h1>
+    
+    <div class=“contenedor”>
+      <ul *ngFor="let journal of entries">
+        <li>{{journal.title}}</li>
+        <li>{{journal.date}}</li>
+        <a [routerLink]="['/', journal._id]"> View Details </a>
+      </ul>
+     </div> 
+
+  
